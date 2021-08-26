@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.eml_listview_test3">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_app_icon_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:largeHeap = "true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <receiver android:name="FoodSiren.util.widget.WidgetView">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_list_view_info" />
+        </receiver>
+
+        <activity android:name="FoodSiren.view.activity.RecipeInfoActivity"></activity>
+        <activity android:name="FoodSiren.view.activity.RecipeActivity" />
+        <activity android:name="FoodSiren.view.activity.PhotoActivity" />
+        <activity android:name="FoodSiren.view.activity.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="FoodSiren.view.etc.FoodSirenIntro"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="FoodSiren.view.activity.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="FoodSiren.view.activity.EnrollActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="FoodSiren.view.activity.ManageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="FoodSiren.view.activity.TipActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="FoodSiren.view.activity.EditTimeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="FoodSiren.view.activity.BarcodeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="FoodSiren.view.dialog.ModifyDialog"
+            android:theme="@style/Theme.MyDialog" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="FoodSiren.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <receiver android:name="FoodSiren.util.alarm.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="FoodSiren.util.widget.WidgetService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="firstColor">#1E8AFD</color>
+    <color name="secondColor">#1E8AFD</color>
+    <color name="thirdColor">#1E8AFD</color>
+    <color name="toolbar">#1E8AFD</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_tip_button">#D6D7D7</color>
+    <color name="transparent">#33000000</color>
+</resources>

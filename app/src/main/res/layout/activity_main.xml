@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/white"
+    android:columnCount="1"
+    android:rowCount="2">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/MainActivity_tb"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@color/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/MainActivity_tv_for_tb_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Food Siren"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/main_icons">
+
+        </ImageView>
+    </LinearLayout>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#363F51B5"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        tools:context="com.example.FoodSiren.MainActivity">
+
+        <LinearLayout
+            android:id="@+id/MainActivity_ll_enroll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            android:background="#AB03A9F4"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/MainActivity_btn_enroll"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/enroll_list" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="식품 등록"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MainActivity_ll_manage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="1dp"
+            android:background="#1E8AFD"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/MainActivity_btn_manage"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="7dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:padding="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/manage_list" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="식품 관리"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </GridLayout>
+
+</GridLayout>
